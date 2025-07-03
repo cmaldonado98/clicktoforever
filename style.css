@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #d4d9ec;
+  font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(60,60,90,0.12);
+  padding: 48px 32px 32px 32px;
+  text-align: center;
+  max-width: 400px;
+  width: 90vw;
+  box-sizing: border-box;
+}
+
+/* El logo ocupa todo el ancho posible del container manteniendo proporción */
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 32px;
+  transition: width 0.2s;
+}
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+#countdown {
+  font-size: 1.3rem;
+  color: #c6c2d2;
+  letter-spacing: 2px;
+  margin-top: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 2vw 12px 2vw;
+    max-width: 99vw;
+    border-radius: 12px;
+  }
+  .logo {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 14px;
+  }
+  #countdown {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+}
