@@ -1,20 +1,27 @@
-// Cuenta regresiva para la fecha de lanzamiento (ejemplo: 1 de agosto de 2025)
-const launchDate = new Date('2025-08-01T00:00:00');
-const countdown = document.getElementById('countdown');
+// Script principal para Click to Forever
+// Funcionalidad de animaciones y mejoras de interactividad
 
-function updateCountdown() {
-  const now = new Date();
-  const diff = launchDate - now;
-  if (diff <= 0) {
-    countdown.textContent = '¡Ya estamos en línea!';
-    return;
+document.addEventListener('DOMContentLoaded', function() {
+  // Agregar clase de animación al cargar
+  const main = document.querySelector('main');
+  if (main) {
+    main.classList.add('animate-slide-in');
   }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  countdown.textContent = `Faltan ${days} días, ${hours}h ${minutes}m ${seconds}s`;
-}
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  // Mejorar accesibilidad de links
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    // Asegurar que los links externos abran en nueva pestaña
+    if (link.getAttribute('target') === '_blank') {
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
+  // Logging de eventos para debugging
+  console.log('Click to Forever - Página cargada exitosamente');
+});
+
+// Función para rastrear clicks en botones de redes sociales
+window.trackSocialClick = function(platform) {
+  console.log(`Redirigiendo a ${platform}`);
+};
